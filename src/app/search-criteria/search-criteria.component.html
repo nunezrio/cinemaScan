@@ -1,1 +1,18 @@
 <p>search-criteria works!</p>
+<form #searchForm="ngForm" (ngSubmit)="doSearch(searchForm.value.search)">
+  <input list="genres" type="text" id="search" name="search" ngModel />
+  <datalist id="genres">
+    <option value="Action"></option>
+    <option value="Animation"></option>
+    <option value="Comedy"></option>
+    <option value="History"></option>
+    <option value="Horror"></option>
+    <option value="Romance"></option>
+  </datalist>
+  <button>Submit</button>
+</form>
+
+<section *ngFor="let genre of genres">
+  <p>{{ genre.id }}</p>
+  <p>{{ genre.name }}</p>
+</section>
