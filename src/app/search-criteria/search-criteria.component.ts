@@ -10,15 +10,14 @@ export class SearchCriteriaComponent implements OnInit {
   genres: any[];
   constructor(private movieService: MovieService) {}
 
-  doSearch(genre: string = "Horror") {
-    this.movieService.getMovies(genre).subscribe(data => {
-      console.log(data);
-
+  searchGenre() {
+    this.movieService.getGenres().subscribe(data => {
       this.genres = data.genres;
+      console.log();
     });
   }
 
   ngOnInit() {
-    this.doSearch();
+    this.searchGenre()
   }
 }
