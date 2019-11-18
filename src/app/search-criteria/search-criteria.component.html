@@ -1,11 +1,13 @@
-<form #searchForm="ngForm" (ngSubmit)="doSearch(searchForm.value.search)">
-  <select id="genres">
+<form #searchForm="ngForm" (ngSubmit)="submitSearchForm(searchForm)">
+  <select ngModel name="genre" id="genres">
     <option value="">---Select Genre---</option>
-    <option *ngFor="let genre of genres" [value]="genre.id">{{ genre.name }}</option>
+    <option *ngFor="let genre of genres" [value]="genre.id">{{
+      genre.name
+    }}</option>
   </select>
   <label for="yearInput">Enter Year</label>
-  <input type="number" name="yearInput" min="1883" max="9999">
-  <select name="" id="">
+  <input type="number" name="yearInput" min="1883" max="9999" ngModel />
+  <select ngModel name="certification" id="">
     <option value="">---Select Rating---</option>
     <option value="G">G</option>
     <option value="PG">PG</option>
@@ -17,4 +19,4 @@
   <button>Submit</button>
 </form>
 
-<app-movie-list></app-movie-list>
+<app-movie-list [displayMovies]="movies"></app-movie-list>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { MovieService } from "../services/movie.service";
 
 @Component({
@@ -7,20 +7,11 @@ import { MovieService } from "../services/movie.service";
   styleUrls: ["./movie-list.component.css"]
 })
 export class MovieListComponent implements OnInit {
+  @Input()
+  displayMovies: [];
+
   genres: any[];
   constructor(private movieService: MovieService) {}
 
-  doSearch(genre: string = "Horror") {
-    this.movieService.getMovies(genre).subscribe(data => {
-      console.log(data);
-
-      this.genres = data.genres;
-    });
-  }
-
-
-  
-  ngOnInit() {
-    this.doSearch();
-  }
+  ngOnInit() {}
 }

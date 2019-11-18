@@ -1,0 +1,7 @@
+<section *ngFor="let movies of displayMovies">
+  <h2>{{ movies.title }}</h2>
+  <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
+  <i class="material-icons">
+    favorite_border
+  </i>
+</section>
