@@ -1,26 +1,41 @@
-<section *ngFor="let movies of displayMovies">
-  <h2>
-    <h2>{{ movies.title }}</h2>
-    <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
-  </h2>
-  <p>
-    <i class="material-icons">
-      favorite_border
-    </i>
-  </p>
-  <div class="modal">
-    <div class="information">
+<section
+  class="main-container"
+  *ngFor="let movies of displayMovies; index as i"
+>
+  <div class="movie-list">
+    <h2>
       <h2>{{ movies.title }}</h2>
-
-      <h3>({{ movies.release_date }})</h3>
-      <p>{{ movies.vote_average }}</p>
-      <h3>Overview</h3>
-      <p>{{ movies.overview }}</p>
-    </div>
-    <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
-    <img
-      class="backdrop"
-      src="https://image.tmdb.org/t/p/w780/{{ movies.backdrop_path }}"
-    />
+      <img
+        src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}"
+        (click)="setIndex(i)"
+      />
+    </h2>
+    <p>
+      <i class="material-icons">
+        favorite_border
+      </i>
+    </p>
   </div>
+  <section class="modal-container" *ngIf="index === i">
+    <div class="modal">
+      <div class="overlay"></div>
+      <div class="backdrop">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ movies.backdrop_path }}"
+        />
+      </div>
+      <div class="information">
+        <h2>{{ movies.title }}</h2>
+
+        <h3>({{ movies.release_date }})</h3>
+        <p>{{ movies.vote_average }}</p>
+        <img
+          class="movie-poster"
+          src="https://image.tmdb.org/t/p/w500/{{ movies.poster_path }}"
+        />
+        <h3>Overview</h3>
+        <p class="overview">{{ movies.overview }}</p>
+      </div>
+    </div>
+  </section>
 </section>

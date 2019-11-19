@@ -10,8 +10,14 @@ export class MovieListComponent implements OnInit {
   @Input()
   displayMovies: [];
 
+  hideModal: boolean = true;
+  index: number;
   genres: any[];
   constructor(private movieService: MovieService) {}
+
+  setIndex(index: number): void {
+    this.index = index;
+  }
 
   ngOnInit() {}
 }

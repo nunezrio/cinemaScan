@@ -1,8 +1,12 @@
 .cinemascan-logo {
-  height: 160px;
-  width: 160px;
+  height: 96px;
+  width: 96px;
 }
 
 h1 {
   font-family: 'Roboto', sans-serif;
+}
+
+.title-emphasis {
+  font-weight: 900;
 }
