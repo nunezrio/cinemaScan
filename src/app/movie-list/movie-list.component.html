@@ -1,7 +1,26 @@
 <section *ngFor="let movies of displayMovies">
-  <h2>{{ movies.title }}</h2>
-  <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
-  <i class="material-icons">
-    favorite_border
-  </i>
+  <h2>
+    <h2>{{ movies.title }}</h2>
+    <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
+  </h2>
+  <p>
+    <i class="material-icons">
+      favorite_border
+    </i>
+  </p>
+  <div class="modal">
+    <div class="information">
+      <h2>{{ movies.title }}</h2>
+
+      <h3>({{ movies.release_date }})</h3>
+      <p>{{ movies.vote_average }}</p>
+      <h3>Overview</h3>
+      <p>{{ movies.overview }}</p>
+    </div>
+    <img src="https://image.tmdb.org/t/p/w185/{{ movies.poster_path }}" />
+    <img
+      class="backdrop"
+      src="https://image.tmdb.org/t/p/w780/{{ movies.backdrop_path }}"
+    />
+  </div>
 </section>
