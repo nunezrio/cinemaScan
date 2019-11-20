@@ -13,29 +13,39 @@
     </div>
     <section class="modal-container" *ngIf="index === i">
       <div class="modal">
-        <div class="overlay"></div>
+        <div class="overlay">
+          <a (click)="resetIndex(i)" class="close">X</a>
+        </div>
         <div class="backdrop">
           <img
             src="https://image.tmdb.org/t/p/original/{{ movies.backdrop_path }}"
           />
         </div>
-        <div class="information">
-          <a (click)="resetIndex(i)" class="close">X</a>
-          <p>
-            <i class="material-icons" (click)="toggleFavorite(i, movies)">
-              {{ favoriteIcon }}
-            </i>
-          </p>
-          <h2>{{ movies.title }}</h2>
 
-          <h3>({{ movies.release_date }})</h3>
-          <p>{{ movies.vote_average }}</p>
-          <img
-            class="movie-poster"
-            src="https://image.tmdb.org/t/p/w342/{{ movies.poster_path }}"
-          />
-          <h3>Overview</h3>
-          <p class="overview">{{ movies.overview }}</p>
+        <div class="information">
+          <div class="information-container">
+            <div class="poster-container">
+              <img
+                class="movie-poster"
+                src="https://image.tmdb.org/t/p/w342/{{ movies.poster_path }}"
+              />
+            </div>
+
+            <div class="text-container">
+              <p>
+                <i class="material-icons" (click)="toggleFavorite(i, movies)">
+                  {{ favoriteIcon }}
+                </i>
+              </p>
+              <h2>{{ movies.title }}</h2>
+
+              <h3>({{ movies.release_date }})</h3>
+              <p>{{ movies.vote_average }}</p>
+
+              <h3>Overview</h3>
+              <p class="overview">{{ movies.overview }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
