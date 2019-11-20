@@ -27,6 +27,7 @@ export class SearchCriteriaComponent implements OnInit {
       this.movies = data.results;
       console.log(data.results);
     });
+    form.reset();
   }
 
   ngOnInit() {

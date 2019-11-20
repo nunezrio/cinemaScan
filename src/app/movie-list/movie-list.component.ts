@@ -19,5 +19,9 @@ export class MovieListComponent implements OnInit {
     this.index = index;
   }
 
+  resetIndex(index: number): void {
+    this.index = null;
+  }
+
   ngOnInit() {}
 }
