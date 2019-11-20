@@ -1,0 +1,69 @@
+/* Header  */
+
+header {
+  background-color: #000000;
+  text-align: center;
+}
+
+.cinemascan-logo {
+  margin: 0 auto;
+  height: 96px;
+  width: 96px;
+  padding-top: 8px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #fbc02d;
+}
+
+.light {
+  color: white;
+}
+
+.title-emphasis {
+  font-weight: 900;
+}
+
+.navigation {
+  background-color: #212121;
+  text-align: center;
+  padding: 8px 8px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  padding: 0px 8px;
+}
+
+.navigation a:hover,
+a:focus {
+  color: #fbc02d;
+}
+
+.divider {
+  border-right: 2px solid #fbc02d;
+  color: #fbc02d;
+}
+
+form {
+  margin: 0 auto;
+}
+
+.custom-select {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: 4px;
+}
+
+.select-selected {
+  width: 100px;
+  padding: 16px;
+}

@@ -1,1 +1,17 @@
-<app-search-criteria></app-search-criteria>
+<header>
+  <img
+    class="cinemascan-logo"
+    src="/assets/cinema-scan-logo-ylw.svg"
+    alt="cinema scan logo"
+  />
+  <h1>
+    <span class="light">cinema</span><span class="title-emphasis">scan</span>
+  </h1>
+</header>
+
+<nav class="navigation">
+  <a routerLink="/search-criteria">Search</a> <span class="divider"></span>
+  <a routerLink="/watchlist-page">Watchlist</a>
+</nav>
+
+<router-outlet></router-outlet>

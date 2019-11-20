@@ -18,6 +18,17 @@ export class MovieService {
     });
   }
 
+  favorites: any[] = [];
+
+  addToFavorites(movie: any): void {
+    this.favorites.push(movie);
+    console.log(this.favorites);
+  }
+
+  getFavorites(): any[] {
+    return this.favorites;
+  }
+
   getMovies(
     year: string,
     certification: string,

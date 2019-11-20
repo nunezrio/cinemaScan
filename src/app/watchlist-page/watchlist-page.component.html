@@ -1,1 +1,13 @@
-<p>watchlist-page works!</p>
+<main>
+  <section
+    class="main-container"
+    *ngFor="let favorite of favorites; index as i"
+  >
+    <div class="favorite-list">
+      <img
+        src="https://image.tmdb.org/t/p/w185/{{ favorite.poster_path }}"
+        alt="{{ favorite.title }}"
+      />
+    </div>
+  </section>
+</main>
